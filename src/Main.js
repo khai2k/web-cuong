@@ -2,12 +2,12 @@ import './App.css';
 import { useState } from 'react';
 
 function Main() {
-    const [rfId, setrfId] = useState('')
+    const [rfId, setRfId] = useState('')
     return (
         <>
-            <input autoFocus className="input-hidden"
+            <input autoFocus onBlur={({ target }) => target.focus()} className="input-hidden"
                 value={rfId} onChange={(e) => {
-                    setrfId(e.target.value);
+                    setRfId(e.target.value);
                     console.log(e.target.value)
                 }}></input>
             <div className="header">
